@@ -1,0 +1,25 @@
+<div class="container">
+  <a href="" routerLink="/" >Home</a><br>
+  <a href="" routerLink="/create" >Create</a>
+  <h2>Danh sách Sách</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th colspan="2">Acion</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let c of listBook">
+      <td>{{c.id}}</td>
+      <td><a routerLink="/detail/{{c.id}}">{{c.title}}</a></td>
+      <td>{{c.author}}</td>
+      <td><button><a routerLink="/edit/{{c.id}}">Edit</a></button></td>
+      <td><button (click)="delete(c.id)">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

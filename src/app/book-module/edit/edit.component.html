@@ -1,0 +1,20 @@
+<div class="container">
+  <a href="" routerLink="/" >Home</a><br>
+  <h1>Edit Book</h1>
+  <form (ngSubmit)="edit()" [formGroup]="formEdit" >
+    nhập Id
+    <input formControlName="id" hidden><br><br>
+    <p *ngIf="!formEdit!.get('id')?.valid" style="color:red"> Không để trống</p>
+    nhập title
+    <input formControlName="title"><br><br>
+    <p *ngIf="!formEdit!.get('title')?.valid" style="color:red"> Không được để trống</p>
+    nhập author
+    <input formControlName="author"><br><br>
+    <p *ngIf="!formEdit!.get('author')?.valid" style="color:red"> Không được để trống</p>
+    nhap description
+    <input formControlName="description"><br><br>
+    <p *ngIf="!formEdit!.get('description')?.valid" style="color:red"> Không được để trống</p>
+    <br>
+    <button type="submit" [disabled]="!formEdit.valid" >Edit</button>
+  </form>
+</div>
